@@ -56,8 +56,17 @@ class IpdScanner:
         """Run a shell command and return the output."""
         try:
             result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, universal_newlines=True)
-            if result.returncode != 0:
-                self.logger.error(f"Command failed with return code {result.returncode}. Command: {command}")
+
+            # special handling for fping
+            if 'fping' in command:
+                # log an error only if the return code is neither 0 (success) nor 1 (partial success)
+                if result.returncode not in (0, 1):
+                    self.logger.error(f"Command failed with return code {result.returncode}. Command: {command}")
+            else:
+                # for nmap
+                if result.returncode != 0:
+                    self.logger.error(f"Command failed with return code {result.returncode}. Command: {command}")
+            
             return result.stdout
         except Exception as e:
             self.logger.error(f"Error running command: {command}. Exception: {str(e)}")
