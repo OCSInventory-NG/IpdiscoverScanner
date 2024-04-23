@@ -1,6 +1,6 @@
 # IpDiscover Scanner
 
-This script is meant as an alternative to the existing IpDiscover perl script included with ocsreports. It will not insert data into the database, but the results of the scan will be output to a file in XML format. The files can then be injected into the OCS, either by using the perl injector script or any tool able to POST data to /ocsinventory.
+This script is meant as an alternative to the existing IpDiscover perl script included with ocsreports. It will not insert data into the database, but the results of the scan will be output to a file in XML format. The files can then be injected into an OCS server, either by using the perl injector script or any tool able to POST data to /ocsinventory.
 
 ## Requirements
 - Python 3.6+
@@ -24,4 +24,4 @@ This will scan the subnets 172.18.25.0/24 and 172.18.15.0/24 using fping and out
 
 See the [OCS documentation](https://wiki.ocsinventory-ng.org/08.Multi-site-network-architecture/Synchronisation-between-OCS-server-master-slaves/#synchronsation-of-one-inventory) for more information on how to inject the results into OCS.
 
-The perl injector script is included with the OCS installation. It can be found in the `binutils` directory of the sever. The script is called `ocsinventory-injector.pl` (see [ocsinventory-injector.pl on Github](https://github.com/OCSInventory-NG/OCSInventory-Server/blob/master/binutils/ocsinventory-injector.pl))
+The perl injector script is included with the OCS installation. It can be found in the `binutils` directory of the server. The script is called `ocsinventory-injector.pl` (see [ocsinventory-injector.pl on Github](https://github.com/OCSInventory-NG/OCSInventory-Server/blob/master/binutils/ocsinventory-injector.pl))
