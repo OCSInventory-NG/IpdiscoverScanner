@@ -6,6 +6,7 @@ This script is meant as an alternative to the existing IpDiscover perl script in
 - Python 3.6+
 - fping
 - nmap
+- OCSInventory-server compatibility : starting at commit [1eb3b5a](https://github.com/OCSInventory-NG/OCSInventory-Server/tree/1eb3b5a) or later
 
 ## Usage
 
